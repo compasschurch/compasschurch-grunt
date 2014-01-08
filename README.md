@@ -7,10 +7,13 @@ Shared grunt configuration for CBC sites
 Usage
 -----
 
-### 1. Put this as the Gruntfile.js:
+### 1. Put this as your project's Gruntfile.js:
 
 ```js
-module.exports = require('compasschurch-grunt');
+module.exports = function(grunt) {
+    grunt.loadNpmTasks('compasschurch-grunt');
+    require('compasschurch-grunt')(grunt);
+};
 ```
 
 ### 2. Add a profiles.local.json
