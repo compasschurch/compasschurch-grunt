@@ -201,7 +201,10 @@ module.exports = function (grunt) {
                 options: {
                     baseUrl: "<%= yeoman.dist %>/<%= yeoman.assets %>",
                     waitSeconds: 30,
-                    optimize: "none",
+                    optimize: "uglify2",
+                    uglify2: {
+                        angular: true
+                    },
                     name: "main",     
                     out: "<%= yeoman.dist %>/<%= yeoman.assets %>/main.js",
                     done: function(done, output) {
