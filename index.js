@@ -1,10 +1,12 @@
+var loadGruntTasks = require('load-grunt-tasks');
+var timeGrunt = require('time-grunt');
+var jshintStylish = require('jshint-stylish');
+
 module.exports = function (grunt) {
-    require('grunt-contrib-copy');
-    
-    // show elapsed time at the end
-    require('time-grunt')(grunt);
     // load all grunt tasks
-    require('load-grunt-tasks')(grunt);
+    loadGruntTasks(grunt);
+    // show elapsed time at the end
+    timeGrunt(grunt);
     
     grunt.option.init({
         'profile': 'local'
@@ -45,7 +47,7 @@ module.exports = function (grunt) {
             options: {
                 force: true,
                 jshintrc: '.jshintrc',
-                reporter: require('jshint-stylish')
+                reporter: jshintStylish
             },
             // We only care about making source files pretty
             'default': [
