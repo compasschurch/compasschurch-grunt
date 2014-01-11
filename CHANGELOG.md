@@ -6,15 +6,6 @@
 
 * **releases:** Add tasks to push major, minor, and patch releases ([3f4491a7](http://github.com/compasschurch/compasschurch-grunt/commit/3f4491a7ee09407bbc3517a50e22c58293252d15))
 
-<a name="v0.0.8"></a>
-### v0.0.8 (2014-01-11)
-
-<a name="v0.0.7"></a>
-### v0.0.7 (2014-01-11)
-
-<a name="v0.0.6"></a>
-### v0.0.6 (2014-01-11)
-
 <a name="v0.0.5"></a>
 ### v0.0.5 (2014-01-11)
 
