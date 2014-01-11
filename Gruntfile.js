@@ -7,7 +7,7 @@ module.exports = function(grunt) {
           options: {
             commitMessage: 'chore: Release v%VERSION%',
             commitFiles: ['-a'], // '-a' for all files
-            pushTo: 'origin'
+            push: false
           }
         }
     });
