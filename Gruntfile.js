@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         bump: {
           options: {
             commitMessage: 'chore: Release v%VERSION%',
-            commitFiles: '-a', // '-a' for all files
+            commitFiles: ['-a'], // '-a' for all files
             pushTo: 'origin'
           }
         }
