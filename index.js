@@ -21,11 +21,7 @@ module.exports = function (grunt) {
     // show elapsed time at the end
     timeGrunt(grunt);
     
-    grunt.option.init({
-        'profile': 'local'
-    });
-    
-    var profile = grunt.option('profile');
+    var profile = grunt.option('profile') || 'local';
 
     var pkg = grunt.file.readJSON('package.json');
     var profiles = pkg.profiles || {};
