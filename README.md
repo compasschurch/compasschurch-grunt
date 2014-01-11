@@ -24,5 +24,6 @@ module.exports = require('compasschurch-grunt');
 ### 3. Run `grunt`
 
 This gives you the default local build.
-You need to run the server yourself.
 Load up the app at baseUrl to see it in action!
+NB: You need to start the server yourself.
+How to do that is different based on each environment.
