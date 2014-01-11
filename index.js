@@ -3,8 +3,21 @@ var timeGrunt = require('time-grunt');
 var jshintStylish = require('jshint-stylish');
 
 module.exports = function (grunt) {
-    // load all grunt tasks
-    loadGruntTasks(grunt);
+    // load all grunt tasks (NB: Can't naively use load-grunt-tasks)
+    grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-requirejs');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-conventional-changelog');
+    grunt.loadNpmTasks('grunt-cssbeautifier');
+    grunt.loadNpmTasks('grunt-jsbeautifier');
+    grunt.loadNpmTasks('grunt-jsonlint');
+    grunt.loadNpmTasks('grunt-manifest-ext');
+    grunt.loadNpmTasks('grunt-newer');
+    grunt.loadNpmTasks('grunt-targethtml');
+
     // show elapsed time at the end
     timeGrunt(grunt);
     
