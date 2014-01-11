@@ -240,8 +240,20 @@ module.exports = function (grunt) {
         }
     });
     
-    grunt.registerTask('release', [
-        'bump-only',
+    grunt.registerTask('release:patch', [
+        'bump-only:patch',
+        'changelog',
+        'bump-commit'
+    ]);
+
+    grunt.registerTask('release:minor', [
+        'bump-only:minor',
+        'changelog',
+        'bump-commit'
+    ]);
+
+    grunt.registerTask('release:major', [
+        'bump-only:major',
         'changelog',
         'bump-commit'
     ]);
