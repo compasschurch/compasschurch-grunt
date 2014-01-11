@@ -1,3 +1,11 @@
+<a name="v0.1.1"></a>
+### v0.1.1 (2014-01-11)
+
+
+#### Bug Fixes
+
+* **releases:** Don't auto-push ([0dae8bc7](http://github.com/compasschurch/compasschurch-grunt/commit/0dae8bc709b5e9e85107cd2f8e390411c17c361c))
+
 <a name="v0.1.0"></a>
 ## v0.1.0 (2014-01-11)
 
