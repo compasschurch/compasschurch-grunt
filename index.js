@@ -5,6 +5,7 @@ var jshintStylish = require('jshint-stylish');
 module.exports = function (grunt) {
     // load all grunt tasks (NB: Can't naively use load-grunt-tasks)
     grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-bump');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -229,8 +230,22 @@ module.exports = function (grunt) {
                     }
                 }
             }
+        },
+        bump: {
+          options: {
+            commitMessage: 'chore: Release v%VERSION%',
+            commitFiles: ['-a'], // '-a' for all files
+            pushTo: 'origin'
+          }
         }
     });
+    
+    grunt.registerTask('release', [
+        'bump-only',
+        'changelog',
+        'bump-commit'
+    ]);
+
 
     grunt.registerTask('test', [
         
