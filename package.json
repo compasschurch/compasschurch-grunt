@@ -1,9 +1,9 @@
 {
-  "name": "compasschurch-grunt",
+  "name": "elgg-grunt",
   "version": "0.2.0",
   "repository": {
       "type" : "git",
-      "url" : "http://github.com/compasschurch/compasschurch-grunt.git"
+      "url" : "http://github.com/ewinslow/elgg-grunt.git"
   },
   "dependencies": {
     "load-grunt-tasks": "~0.2.0",
