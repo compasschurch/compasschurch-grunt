@@ -6,7 +6,6 @@
       "url" : "http://github.com/ewinslow/elgg-grunt.git"
   },
   "dependencies": {
-    "load-grunt-tasks": "~0.2.0",
     "time-grunt": "~0.2.3",
     "jshint-stylish": "~0.1.4"
   },
