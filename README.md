@@ -53,7 +53,7 @@ npm publish
 ```
 
 Each of these will generate the appropriate changelog updates
-assuming you have been diligent to adhear to the recommended
+assuming you have been diligent to adhere to the recommended
 [commit message format][1].
 
  [1]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit
