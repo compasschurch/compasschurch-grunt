@@ -1,7 +1,7 @@
-compasschurch-grunt
+elgg-grunt
 ===================
 
-Shared grunt configuration for CBC sites.
+Shared grunt configuration for Elgg 2.0 plugins and sites.
 
 Usage
 -----
@@ -9,7 +9,7 @@ Usage
 ### 1. Put this as your project's Gruntfile.js:
 
 ```js
-module.exports = require('compasschurch-grunt');
+module.exports = require('elgg-grunt');
 ```
 
 ### 2. Add a profiles.local.json
