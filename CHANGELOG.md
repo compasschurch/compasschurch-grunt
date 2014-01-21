@@ -1,3 +1,11 @@
+<a name="v0.2.0"></a>
+## v0.2.0 (2014-01-20)
+
+
+#### Features
+
+* **structure:** Support src/ directory distinct from app/ ([5bbd7de1](http://github.com/compasschurch/compasschurch-grunt/commit/5bbd7de1837c4870e9cb114315a3922ba25065f1), closes [#3](http://github.com/compasschurch/compasschurch-grunt/issues/3))
+
 <a name="v0.1.1"></a>
 ### v0.1.1 (2014-01-11)
 
