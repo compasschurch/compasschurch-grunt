@@ -1,4 +1,3 @@
-var loadGruntTasks = require('load-grunt-tasks');
 var timeGrunt = require('time-grunt');
 var jshintStylish = require('jshint-stylish');
 
@@ -38,7 +37,9 @@ module.exports = function (grunt) {
             host: process.env.IP
         },
         yeoman: {
-            src: 'app',
+            src: 'src',
+            srcdest: '<%= yeoman.dist %>/<%= yeoman.assets %>/<%= pkg.volo.namespace %>',
+            app: 'app',
             dist: 'dist',
             assets: 'assets',
             vendors: 'vendors',
@@ -62,12 +63,16 @@ module.exports = function (grunt) {
             // We only care about making source files pretty
             'default': [
                 'Gruntfile.js',
-                '<%= yeoman.src %>/**/*.js',
+                '<%= yeoman.app %>/{,**/}*.js',
+                '<%= yeoman.src %>/{,**/}*.js',
             ]
         },
         jsbeautifier: {
             "default": {
-                src: ["<%= yeoman.src %>/**/*.{html,css,js}"]
+                src: [
+                    "<%= yeoman.app %>/{,**/}*.{html,css,js}",
+                    "<%= yeoman.src %>/{,**/}*.{html,css,js}",
+                ]
             }
         },
         cssbeautifier: {
@@ -75,7 +80,10 @@ module.exports = function (grunt) {
                 indent: '\t',
                 autosemicolon: true
             },
-            'default': ["<%= yeoman.src %>/{,**/}*.css"]
+            'default': [
+                "<%= yeoman.app %>/{,**/}*.css",
+                "<%= yeoman.src %>/{,**/}*.css",
+            ]
         },
         autoprefixer: {
             options: {
@@ -85,6 +93,11 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.src %>',
+                    src: '{,**/}*.css',
+                    dest: '<%= yeoman.srcdest %>'
+                }, {
+                    expand: true,
+                    cwd: '<%= yeoman.app %>',
                     src: '{,**/}*.css',
                     dest: '<%= yeoman.dist %>'
                 }]
@@ -96,6 +109,11 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: '<%= yeoman.src %>',
                     src: '{,**/}*.{gif,jpeg,jpg,png,webp}',
+                    dest: '<%= yeoman.srcdest %>'
+                }, {
+                    expand: true,
+                    cwd: '<%= yeoman.app %>',
+                    src: '{,**/}*.{gif,jpeg,jpg,png,webp}',
                     dest: '<%= yeoman.dist %>'
                 }]
             }
@@ -105,6 +123,11 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.src %>',
+                    src: '{,**/}*.svg',
+                    dest: '<%= yeoman.srcdest %>'
+                }, {
+                    expand: true,
+                    cwd: '<%= yeoman.app %>',
                     src: '{,**/}*.svg',
                     dest: '<%= yeoman.dist %>'
                 }]
@@ -127,6 +150,11 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: '<%= yeoman.src %>',
                     src: '**/*.{ng,html}',
+                    dest: '<%= yeoman.srcdest %>'
+                }, {
+                    expand: true,
+                    cwd: '<%= yeoman.app %>',
+                    src: '**/*.{ng,html}',
                     dest: '<%= yeoman.dist %>'
                 }]
             }
@@ -146,6 +174,12 @@ module.exports = function (grunt) {
                     expand: true,
                     dot: true,
                     cwd: '<%= yeoman.src %>/',
+                    dest: '<%= yeoman.srcdest %>',
+                    src: ['{,**/}*']
+                }, {
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= yeoman.app %>/',
                     dest: '<%= yeoman.dist %>/',
                     src: ['{,**/}*']
                 }]
@@ -155,7 +189,9 @@ module.exports = function (grunt) {
             'default': {
                 src: [
                     '*.json',
+                    // Don't want to lint the vendors dir
                     '<%= yeoman.src %>/{,**/}*.json',
+                    '<%= yeoman.app %>/{,**/}*.json'
                 ]
             }
         },
@@ -167,7 +203,7 @@ module.exports = function (grunt) {
                     }
                 },
                 files: {
-                    '<%= yeoman.dist %>/index.html': '<%= yeoman.src %>/index.html'
+                    '<%= yeoman.dist %>/index.html': '<%= yeoman.app %>/index.html'
                 }
             }
         },
@@ -180,7 +216,7 @@ module.exports = function (grunt) {
                 hash: true,
                 exclude: [
                     'robots.txt',
-                    'api/{,**/}*',
+                    'api/{,**/}*', // This shouldn't be necessary...
                     '.*',
                     '{,**/}*.appcache'
                 ],
@@ -198,7 +234,7 @@ module.exports = function (grunt) {
             local: {
                 options: {
                     basePath: '<%= yeoman.vendors %>/',
-                    master: '../<%= yeoman.src %>/index.html'
+                    master: '../<%= yeoman.app %>/index.html'
                 },
                 src: [
                     '{,**/}*',
