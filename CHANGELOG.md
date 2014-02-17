@@ -1,3 +1,16 @@
+<a name="v0.3.0"></a>
+## v0.3.0 (2014-02-17)
+
+
+#### Bug Fixes
+
+* **releases:** Don't auto-push ([0dae8bc7](http://github.com/ewinslow/elgg-grunt/commit/0dae8bc709b5e9e85107cd2f8e390411c17c361c))
+
+
+#### Features
+
+* **structure:** Support src/ directory distinct from app/ ([5bbd7de1](http://github.com/ewinslow/elgg-grunt/commit/5bbd7de1837c4870e9cb114315a3922ba25065f1), closes [#3](http://github.com/ewinslow/elgg-grunt/issues/3))
+
 <a name="v0.2.0"></a>
 ## v0.2.0 (2014-01-20)
 
