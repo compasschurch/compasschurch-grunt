@@ -320,9 +320,17 @@ module.exports = function (grunt) {
         'test',
     ]);
     
+    grunt.registerTask('writeprofile', function() {
+        var profile = grunt.config.get('profile');
+        var yo = grunt.config.get('yeoman');
+        
+        grunt.file.write(yo.dist + '/' + yo.assets + '/profile.json', JSON.stringify(profile));
+    });
+    
     grunt.registerTask('default', [
         'copy',
         'targethtml',
         'manifest:' + (profile == 'local' ? 'local' : 'default'),
+        'writeprofile',
     ]);
 };
