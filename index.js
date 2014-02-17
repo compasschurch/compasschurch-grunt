@@ -198,9 +198,7 @@ module.exports = function (grunt) {
         targethtml: {
             'default': {
                 options: {
-                    curlyTags: {
-                        baseUrl: "<%= profile.baseUrl %>"
-                    }
+                    curlyTags: profiles[profile]
                 },
                 files: {
                     '<%= yeoman.dist %>/index.html': '<%= yeoman.app %>/index.html'
@@ -234,7 +232,7 @@ module.exports = function (grunt) {
             local: {
                 options: {
                     basePath: '<%= yeoman.vendors %>/',
-                    master: '../<%= yeoman.app %>/index.html'
+                    master: '../<%= yeoman.dist %>/index.html'
                 },
                 src: [
                     '{,**/}*',
