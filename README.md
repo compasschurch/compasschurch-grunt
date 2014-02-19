@@ -22,11 +22,13 @@ which is where the built files will end up.
 }
 ```
 
-### 3. Run `grunt`
-Just `grunt`; no flags or subcommands.
+### 3. Run `grunt watch`
+Just `grunt watch`; no flags or subcommands.
 
-This gives you the default local build.
-Load up the app at baseUrl to see it in action!
+This gives you the default local build, and
+automatically updates as you make changes.
+Load up the app at `baseUrl` to see it in action.
+
 NB: You need to start the server yourself.
 How to do that is different based on each environment.
 
