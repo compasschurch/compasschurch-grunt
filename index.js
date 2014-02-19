@@ -47,11 +47,16 @@ module.exports = function (grunt) {
         clean: ['<%= yeoman.dist %>'],
         watch: {
             'default': {
-                files: ['{,**/}*'],
-                tasks: [
-                    'newer:copy',
-                    'newer:targethtml',
-                ]
+                files: [
+                    '<%= yeoman.src %>/**/*',
+                    '<%= yeoman.app %>/**/*',
+                    'package.json',
+                    'profiles.local.json'
+                ],
+                tasks: ['default'],
+                options: {
+                    atBegin: true
+                }
             }
         },
         jshint: {
