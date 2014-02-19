@@ -1,3 +1,12 @@
+<a name="v0.3.1"></a>
+### v0.3.1 (2014-02-19)
+
+
+#### Bug Fixes
+
+* **index.html:** support for arbitrary curly tags ([4063a66c](http://github.com/ewinslow/elgg-grunt/commit/4063a66c13aada6198afff09443262a3b8b9c2cc))
+* **watch:** make `grunt watch` usable again ([9f2011f8](http://github.com/ewinslow/elgg-grunt/commit/9f2011f8069e13a7ddd50ca272ffc252acb0afb0))
+
 <a name="v0.3.0"></a>
 ## v0.3.0 (2014-02-17)
 
